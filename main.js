@@ -1,10 +1,45 @@
 // www.codewars.com
-// December 1, 2023 Daily Katas
+// December 1, 2023 Daily Katas Strings
 // KATA 1 7kyu
+const generate = length => {
+  let binaryString = '';
+  for (let i = 0; i < length; i++) {
+    binaryString += Math.round(Math.random());
+  }
+  return binaryString;
+};
+console.log(generate(4));
+console.log(generate(16));
+console.log(generate(64));
 
-// KATA 2 7kyu
+// KATA 2 6kyu
+const sortString = (string, ordering) => {
+  let arr = [];
+ for (let i in ordering) {
+  while(string.includes(ordering[i])) {
+    arr.push(ordering[i]);
+    string = string.replace(ordering[i], '');
+  }
+ }
+ return (arr.join('') + string);
+}
+console.log(sortString('foos', 'of'));
+console.log(sortString('string', 'gnirts'));
 
-// KATA 3 7kyu
+// KATA 3 6kyu
+function autocomplete(input, dictionary){
+  let arr = [];
+  input = input.replace(/[^a-z]/gi, '');
+  for (let i = 0; i < dictionary.length; i++) {
+    if (dictionary[i].slice(0, input.length).toLowerCase() === input.toLowerCase()) {
+      arr.push(dictionary[i]);
+    }
+  }
+  return arr.slice(0, 5);
+}
+console.log(autocomplete('ai', ['airplane','airport','apple','ball']))
+console.log(autocomplete('a123i', ['airplane','airport','apple','ball',' air', 'airports', 'airways', 'airstream']))
+
 // December 2, 2023 Daily Katas
 // KATA 1 7kyu
 
