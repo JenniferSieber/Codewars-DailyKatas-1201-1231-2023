@@ -1,5 +1,5 @@
 // www.codewars.com
-// December 1, 2023 Daily Katas Strings
+// December 1, 2023 Daily Katas - Strings
 // KATA 1 7kyu
 const generate = length => {
   let binaryString = '';
@@ -37,8 +37,8 @@ function autocomplete(input, dictionary){
   }
   return arr.slice(0, 5);
 }
-console.log(autocomplete('ai', ['airplane','airport','apple','ball']))
-console.log(autocomplete('a123i', ['airplane','airport','apple','ball',' air', 'airports', 'airways', 'airstream']))
+console.log(autocomplete('ai', ['airplane','airport','apple','ball']));
+console.log(autocomplete('a123i', ['airplane','airport','apple','ball',' air', 'airports', 'airways', 'airstream']));
 
 // December 2, 2023 Daily Katas
 // KATA 1 7kyu
