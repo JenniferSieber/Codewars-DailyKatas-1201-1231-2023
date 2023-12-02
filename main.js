@@ -44,34 +44,36 @@ console.log(autocomplete('a123i', ['airplane','airport','apple','ball',' air', '
 // December 2, 2023 Daily Katas Arrays
 // KATA 1 7kyu 
 const noonerize = ([num1, num2]) => {
-  if (isNaN(num1 + num2)) return `invalid array`
-  const [num1S, num2S] = [num1, num2].map(String)
-  return Math.abs((num1S[0] + num2S.slice(1)) - (num2S[0] + num1S.slice(1)))
+  if (isNaN(num1 + num2)) return `invalid array`;
+  const [num1S, num2S] = [num1, num2].map(String);
+  return Math.abs((num1S[0] + num2S.slice(1)) - (num2S[0] + num1S.slice(1)));
 }
-console.log(noonerize([12, 34]))
-console.log(noonerize([55, 63]))
-console.log(noonerize([357, 579]))
-console.log(noonerize([1000000, 9999999]))
-console.log(noonerize([1000000, 'z9999999']))
+console.log(noonerize([12, 34]));
+console.log(noonerize([55, 63]));
+console.log(noonerize([357, 579]));
+console.log(noonerize([1000000, 9999999]));
+console.log(noonerize([1000000, 'z9999999']));
 // KATA 2 8kyu
 const points = games => {
   let scores = games.map(str => {
     if (str[0] > str[2]) {
-      return 3
+      return 3;
     } else if (str[0] < str[2]) {
-      return 0
+      return 0;
     } else if (str[0] == str[2]) {
-      return 1
+      return ;
     }
-  }) 
-  return scores.reduce((ttl, cv) => ttl + cv, 0)
+  });
+  return scores.reduce((ttl, cv) => ttl + cv, 0);
 }
-console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])) // 30
+console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])); // 30
 
 // KATA 3 7kyu
 const addLength = str => str.split(' ').map(el => `${el} ${el.length}`);
-console.log(addLength(`apple ban`))
-console.log(addLength(`you will win`))
+console.log(addLength(`apple ban`));
+console.log(addLength(`you will win`));
+
+
 // December 3, 2023 Daily Katas
 // KATA 1 7kyu
 
