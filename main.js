@@ -94,6 +94,13 @@ console.log(closingInSum(121n))
 console.log(closingInSum(22225555n))
 console.log(closingInSum(12345n))
 
+// KATA 2 7kyu
+const longestWord = str => str.split(' ').sort((a, b) => a.length - b.length).pop();
+
+console.log(longestWord('one three two'))
+console.log(longestWord('one allow three'))
+console.log(longestWord('a b c d e fgh'))
+
 // December 4, 2023 Daily Katas
 // KATA 1 7kyu
 
