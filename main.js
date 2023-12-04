@@ -74,12 +74,26 @@ console.log(addLength(`apple ban`));
 console.log(addLength(`you will win`));
 
 
-// December 3, 2023 Daily Katas
+// December 3, 2023 Daily Katas - Strings
 // KATA 1 7kyu
+const closingInSum = n => {
+  let arr = n.toString().split('')
+  let numArr = []
+  while (arr.length > 0) {
+    let firstNum = arr.shift()
+    let lastNum = arr.pop()
+    if (lastNum) {
+      numArr.push(firstNum + lastNum)
+    } else {
+      numArr.push(firstNum)
+    }
+  }
+  return numArr.reduce((ttl, cv) => ttl + Number(cv), 0)
+}
+console.log(closingInSum(121n))
+console.log(closingInSum(22225555n))
+console.log(closingInSum(12345n))
 
-// KATA 2 7kyu
-
-// KATA 3 7kyu
 // December 4, 2023 Daily Katas
 // KATA 1 7kyu
 
