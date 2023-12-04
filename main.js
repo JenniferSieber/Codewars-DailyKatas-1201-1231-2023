@@ -77,29 +77,38 @@ console.log(addLength(`you will win`));
 // December 3, 2023 Daily Katas - Strings
 // KATA 1 7kyu
 const closingInSum = n => {
-  let arr = n.toString().split('')
-  let numArr = []
+  let arr = n.toString().split('');
+  let numArr = [];
   while (arr.length > 0) {
-    let firstNum = arr.shift()
-    let lastNum = arr.pop()
+    let firstNum = arr.shift();
+    let lastNum = arr.pop();
     if (lastNum) {
-      numArr.push(firstNum + lastNum)
+      numArr.push(firstNum + lastNum);
     } else {
-      numArr.push(firstNum)
+      numArr.push(firstNum);
     }
   }
-  return numArr.reduce((ttl, cv) => ttl + Number(cv), 0)
+  return numArr.reduce((ttl, cv) => ttl + Number(cv), 0);
 }
-console.log(closingInSum(121n))
-console.log(closingInSum(22225555n))
-console.log(closingInSum(12345n))
+console.log(closingInSum(121n));
+console.log(closingInSum(22225555n));
+console.log(closingInSum(12345n));
 
 // KATA 2 7kyu
 const longestWord = str => str.split(' ').sort((a, b) => a.length - b.length).pop();
+console.log(longestWord('one three two'));
+console.log(longestWord('one allow three'));
+console.log(longestWord('a b c d e fgh'));
 
-console.log(longestWord('one three two'))
-console.log(longestWord('one allow three'))
-console.log(longestWord('a b c d e fgh'))
+const zipvalidate = postcode => (postcode.match(/[ a-z!@#$%^&*><?,.;]/gi) || postcode == '' || postcode.length !== 6 || postcode[0].match(/[05789]/g || postcode.trim() !== postcode )) ? false : true;
+console.log(zipvalidate('198!28'));
+console.log(zipvalidate('19832888'));
+console.log(zipvalidate('198328'));
+console.log(zipvalidate(' 98328'));
+console.log(zipvalidate('111111'));
+console.log(zipvalidate('198  328'));
+console.log(zipvalidate('098328'));
+console.log(zipvalidate('19z328'));
 
 // December 4, 2023 Daily Katas
 // KATA 1 7kyu
