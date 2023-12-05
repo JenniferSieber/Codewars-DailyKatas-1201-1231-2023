@@ -149,21 +149,23 @@ console.log(sortByValueAndIndex([23, 2, 3, 4, 5])) // [2, 3, 4, 23, 5]
 // 1 or more arrays ...arrays
 // returns new array of unique values in order of the original provided arrs -no duplicates
 const uniteUnique = (...arrays)=> {
-  let uniques = ''
+  let uniques = '';
   for (let i = 0; i < arrays.length; i++) {
     arrays[i].forEach((v,i) => {
       if (!uniques.includes(v)) {
-        uniques += v
+        uniques += v;
       }
     })
  }
-return uniques.split('').map(v => (!isNaN(v)) ? Number(v) : v)
+return uniques.split('').map(v => (!isNaN(v)) ? Number(v) : v);
 }
+
+// Simplified Version
 function uniteUnique(...args) {
   return Array.from(new Set([].concat(...args)));
 }
-console.log(uniteUnique([],[1, 2, 1, 2],[2, 1, 1, 2, 1]))
-console.log(uniteUnique([], [4, "a", 2]))
+console.log(uniteUnique([],[1, 2, 1, 2],[2, 1, 1, 2, 1]));
+console.log(uniteUnique([], [4, "a", 2]));
 // December 6, 2023 Daily Katas
 // KATA 1 7kyu
 
