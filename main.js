@@ -126,12 +126,44 @@ const min = (arr, str) => {
 console.log(min([1,2,3,4,5], 'value'));
 console.log(min([1,2,3,4,5], 'index'));
 
-// December 5, 2023 Daily Katas
+// December 5, 2023 Daily Katas - Arrays
 // KATA 1 7kyu
+const exampleSort = (arr, exampleArr) => arr.sort((a,b) => exampleArr.indexOf(a) - exampleArr.indexOf(b));
+console.log(exampleSort([1,2,3,4,5],[2,3,4,1,5])); // [2,3,4,1,5]
+console.log(exampleSort([1,2,3,3,3,4,5],[2,3,4,1,5])); // [2,3,3,3,4,1,5]
 
 // KATA 2 7kyu
+// sort starts at index 1 not zero
+// ascending sort 
+// arry always contain numbers and never be null
+//sort array by the product of the value and the index of the position
+const sortByValueAndIndex = arr => {
+  return arr
+  .map((val, i) => [val * (i+1), val])
+  .sort((a,b) => a[0] - b[0])
+  .map(element => element[1])
+}
+console.log(sortByValueAndIndex([23, 2, 3, 4, 5])) // [2, 3, 4, 23, 5]
 
 // KATA 3 7kyu
+// 1 or more arrays ...arrays
+// returns new array of unique values in order of the original provided arrs -no duplicates
+const uniteUnique = (...arrays)=> {
+  let uniques = ''
+  for (let i = 0; i < arrays.length; i++) {
+    arrays[i].forEach((v,i) => {
+      if (!uniques.includes(v)) {
+        uniques += v
+      }
+    })
+ }
+return uniques.split('').map(v => (!isNaN(v)) ? Number(v) : v)
+}
+function uniteUnique(...args) {
+  return Array.from(new Set([].concat(...args)));
+}
+console.log(uniteUnique([],[1, 2, 1, 2],[2, 1, 1, 2, 1]))
+console.log(uniteUnique([], [4, "a", 2]))
 // December 6, 2023 Daily Katas
 // KATA 1 7kyu
 
