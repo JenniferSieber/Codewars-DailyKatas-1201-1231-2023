@@ -110,12 +110,22 @@ console.log(zipvalidate('198  328'));
 console.log(zipvalidate('098328'));
 console.log(zipvalidate('19z328'));
 
-// December 4, 2023 Daily Katas
+// December 4, 2023 Daily Katas - strings
 // KATA 1 7kyu
+const makePassword = str => str.split(' ').map(s => s[0]).join('').replace(/[ios]/gi, x => ({ i: 1, s: 5, o: 0})[x.toLowerCase()]);
+console.log(makePassword('Keep Calm and Carry On'));
 
 // KATA 2 7kyu
+const dadFilter = str => str = str.trim().replace(/(\,+)/g, ',').replace(/(\,+)$/, '');
+console.log(dadFilter('all this,,,, used to be trees,,,,,,'));
 
-// KATA 3 7kyu
+// KATA 3 7kyu Array
+const min = (arr, str) => {
+  let minValue = Math.min(...arr);
+  return str === 'value' ? minValue : arr.indexOf(minValue)}
+console.log(min([1,2,3,4,5], 'value'));
+console.log(min([1,2,3,4,5], 'index'));
+
 // December 5, 2023 Daily Katas
 // KATA 1 7kyu
 
