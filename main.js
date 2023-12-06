@@ -166,12 +166,44 @@ function uniteUnique(...args) {
 }
 console.log(uniteUnique([],[1, 2, 1, 2],[2, 1, 1, 2, 1]));
 console.log(uniteUnique([], [4, "a", 2]));
-// December 6, 2023 Daily Katas
+
+// December 6, 2023 Daily Katas - Arrays
 // KATA 1 7kyu
+const scoreboard = string => {
+  let arr = string.split(' ');
+  let nums = ['nil', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  return [nums.indexOf(arr[arr.length-2]),nums.indexOf(arr[arr.length-1])];
+}
+console.log(scoreboard("The score is four nil"))
 
 // KATA 2 7kyu
+const getLargerNumbers = (a,b) => a.map((val, i) => (val > b[i] || val === b[i]) ? val : b[i]);
+console.log(getLargerNumbers([13, 64, 15, 17, 88], [23, 14, 53, 17, 80]));
 
 // KATA 3 7kyu
+const counterEffect = hitCount => {
+  let arr = hitCount.split('');
+  let hitCtArr = [];
+  let newArr = arr.map(val => {
+    let num = Number(val);
+    let element = [];
+    for (let i = 0; i <= num; i++) {
+      if (num === 0) {
+        element.push(Number(0));
+      } else {
+        element.push(i);
+      }  
+    }
+    hitCtArr.push(element);
+    
+  })
+  return hitCtArr;
+}
+console.log(counterEffect("1250"));
+console.log(counterEffect("0000"));
+console.log(counterEffect("0050"));
+
+
 // December 7, 2023 Daily Katas
 // KATA 1 7kyu
 
