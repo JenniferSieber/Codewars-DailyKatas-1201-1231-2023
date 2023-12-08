@@ -230,10 +230,10 @@ console.log(add(2));
 // December 8, 2023 Daily Katas - Arrays
 // KATA 1 7kyu
 const sectSort = (arr, start, len) => {
-  const end = len ? arr.splice(start + len) : []
-  const begin = arr.splice(0, start)
-  const mid = arr.sort((a, b) => a - b)
-  return begin.concat(mid, end)
+  const end = len ? arr.splice(start + len) : [];
+  const begin = arr.splice(0, start);
+  const mid = arr.sort((a, b) => a - b);
+  return begin.concat(mid, end);
 }
 console.log(sectSort([1, 2, 5, 7, 4, 6, 3, 9, 8], 2)); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(sectSort([9, 7, 4, 2, 5, 3, 1, 8, 6], 2, 5)); // [9, 7, 1, 2, 3, 4, 5, 8, 6]
@@ -260,16 +260,16 @@ const whosOnline = (friends) => {
   }
   friends.forEach(friend => {
     if (friend.status === 'online' && friend.lastActivity <= 10) {
-      output.online.push(friend.username)
+      output.online.push(friend.username);
     } else if (friend.status === 'online' && friend.lastActivity > 10) {
-      output.away.push(friend.username)
+      output.away.push(friend.username);
     } else if (friend.status === 'offline') {
-      output.offline.push(friend.username)
+      output.offline.push(friend.username);
     }
   })
   for (const users in output) {
     if (output[users].length === 0) {
-      delete output[users]
+      delete output[users];
     }
   }
   return output;
@@ -307,11 +307,11 @@ const rowWeights = arr => {
   let ttl2 = arr.filter((num, i) => i % 2 != 0).reduce((ttl, cv) => ttl + cv, 0);
   return [ttl1, ttl2];
 }
-console.log(rowWeights([]))
-console.log(rowWeights([0, 1, 0]))
-console.log(rowWeights([80]))
-console.log(rowWeights([13, 27, 49]))
-console.log(rowWeights([50, 51, 60,61]))
+console.log(rowWeights([]));
+console.log(rowWeights([0, 1, 0]));
+console.log(rowWeights([80]));
+console.log(rowWeights([13, 27, 49]));
+console.log(rowWeights([50, 51, 60,61]));
 
 // December 9, 2023 Daily Katas
 // KATA 1 7kyu
