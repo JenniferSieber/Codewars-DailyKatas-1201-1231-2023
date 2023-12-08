@@ -206,26 +206,26 @@ console.log(counterEffect("0050"));
 // December 7, 2023 Daily Katas--Arrays
 // KATA 1 7kyu
 const consecutive = arr => Math.max(...arr) - Math.min(...arr) - arr.length + 1 | 0;
-console.log(consecutive([4, 8, 6]))
+console.log(consecutive([4, 8, 6]));
 
 // KATA 2 7kyu
-let employees = [ {firstName: "Dipper", lastName: "Pines", role: "Boss"} ]
+let employees = [ {firstName: "Dipper", lastName: "Pines", role: "Boss"} ];
 function findEmployeesRole(name) {
-  let [employee] = employees.filter(person => `${person.firstName} ${person.lastName}` === name)
-  return employee ? employee.role : 'Does not work here!'
+  let [employee] = employees.filter(person => `${person.firstName} ${person.lastName}` === name);
+  return employee ? employee.role : 'Does not work here!';
 }
-console.log(findEmployeesRole('Dipper Pines'))
-console.log(findEmployeesRole('Kipper Sands'))
+console.log(findEmployeesRole('Dipper Pines'));
+console.log(findEmployeesRole('Kipper Sands'));
 
 // KATA 3 7kyu
 const add = (...args) => {
-  let arr = [...args].map((num, i) => num/(i + 1))
-  return Math.round(arr.reduce((ttl, cv) => ttl + cv, 0))
+  let arr = [...args].map((num, i) => num/(i + 1));
+  return Math.round(arr.reduce((ttl, cv) => ttl + cv, 0));
 }
-console.log(add(3,4,6))
-console.log(add(1,2,3))
-console.log(add(100,200,300))
-console.log(add(2))
+console.log(add(3,4,6));
+console.log(add(1,2,3));
+console.log(add(100,200,300));
+console.log(add(2));
 
 // December 8, 2023 Daily Katas
 // KATA 1 7kyu
