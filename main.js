@@ -313,12 +313,29 @@ console.log(rowWeights([80]));
 console.log(rowWeights([13, 27, 49]));
 console.log(rowWeights([50, 51, 60,61]));
 
-// December 9, 2023 Daily Katas
-// KATA 1 7kyu
+// December 9, 2023 Daily Katas -- Arrays
+// KATA 1 7kyu 
+const myLanguages = (obj) => {
+  return Object.keys(obj).filter(score => obj[score] > 59).sort((a,b) => obj[b] - obj[a])
+}
+console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65} )) //  ["Ruby", "Python"]
 
 // KATA 2 7kyu
+function pairs(arr){
+  let count = 0;
+  for (let i = 0; i < arr.length; i += 2) {
+    if (Math.abs(arr[i] - arr[i + 1]) === 1)
+      count++;
+  }
+  return count;
+ };
+console.log(pairs([1,2,5,8,-4,-3,7,6,5]))//3
 
 // KATA 3 7kyu
+const dbSort = arr => arr.filter(el => typeof el === 'number').sort((a,b) => a - b).concat(arr.filter(el => typeof el == 'string').sort());
+
+console.log(dbSort([6, 2, 3, 4, 5]))
+console.log(dbSort(["Apple",46,"287",574,"Peach","3","69",78,"Grape","423"])) // [46, 78, 574, '287', '3', '423', '69', 'Apple', 'Grape', 'Peach'] )
 // December 10, 2023 Daily Katas
 // KATA 1 7kyu
 
