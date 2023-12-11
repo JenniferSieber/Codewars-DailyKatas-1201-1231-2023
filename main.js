@@ -336,12 +336,33 @@ const dbSort = arr => arr.filter(el => typeof el === 'number').sort((a,b) => a -
 
 console.log(dbSort([6, 2, 3, 4, 5]))
 console.log(dbSort(["Apple",46,"287",574,"Peach","3","69",78,"Grape","423"])) // [46, 78, 574, '287', '3', '423', '69', 'Apple', 'Grape', 'Peach'] )
+
+
 // December 10, 2023 Daily Katas
 // KATA 1 7kyu
+const checkThreeAndTwo = arr => {
+  let arrA = arr.filter(el => el === 'a').length;
+  let arrB = arr.filter(el => el === 'b').length;
+  let arrC = arr.filter(el => el === 'c').length;
+  return (arrA === 3 || arrB === 3 || arrC === 3) && (arrA === 2 || arrB === 2 || arrC === 2);
+}
+console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"] ))
+console.log(checkThreeAndTwo(["a", "a", "a", "a", "a"]))
 
 // KATA 2 7kyu
+const  flatten = arr => arr.flat(Infinity);
+console.log(flatten([[1,2,3],["a","b","c"],[1,2,3]]));
 
 // KATA 3 7kyu
+const getMissingElement = arr => {
+  arr = arr.sort()
+  for (let i = 0; i < 10; i++) {
+    if (arr[i] != i) return i;
+  }
+}
+console.log(getMissingElement([0, 5, 1, 3, 2, 9, 7, 6, 4]));
+
+
 // December 11, 2023 Daily Katas
 // KATA 1 7kyu
 
