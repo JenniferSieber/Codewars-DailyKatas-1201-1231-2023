@@ -316,9 +316,9 @@ console.log(rowWeights([50, 51, 60,61]));
 // December 9, 2023 Daily Katas -- Arrays
 // KATA 1 7kyu 
 const myLanguages = (obj) => {
-  return Object.keys(obj).filter(score => obj[score] > 59).sort((a,b) => obj[b] - obj[a])
+  return Object.keys(obj).filter(score => obj[score] > 59).sort((a,b) => obj[b] - obj[a]);
 }
-console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65} )) //  ["Ruby", "Python"]
+console.log(myLanguages({"Java": 10, "Ruby": 80, "Python": 65} )); //  ["Ruby", "Python"]
 
 // KATA 2 7kyu
 function pairs(arr){
@@ -329,13 +329,12 @@ function pairs(arr){
   }
   return count;
  };
-console.log(pairs([1,2,5,8,-4,-3,7,6,5]))//3
+console.log(pairs([1,2,5,8,-4,-3,7,6,5])); //3
 
 // KATA 3 7kyu
 const dbSort = arr => arr.filter(el => typeof el === 'number').sort((a,b) => a - b).concat(arr.filter(el => typeof el == 'string').sort());
-
-console.log(dbSort([6, 2, 3, 4, 5]))
-console.log(dbSort(["Apple",46,"287",574,"Peach","3","69",78,"Grape","423"])) // [46, 78, 574, '287', '3', '423', '69', 'Apple', 'Grape', 'Peach'] )
+console.log(dbSort([6, 2, 3, 4, 5]));
+console.log(dbSort(["Apple",46,"287",574,"Peach","3","69",78,"Grape","423"])); // [46, 78, 574, '287', '3', '423', '69', 'Apple', 'Grape', 'Peach'])
 
 
 // December 10, 2023 Daily Katas
@@ -346,8 +345,8 @@ const checkThreeAndTwo = arr => {
   let arrC = arr.filter(el => el === 'c').length;
   return (arrA === 3 || arrB === 3 || arrC === 3) && (arrA === 2 || arrB === 2 || arrC === 2);
 }
-console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"] ))
-console.log(checkThreeAndTwo(["a", "a", "a", "a", "a"]))
+console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"]));
+console.log(checkThreeAndTwo(["a", "a", "a", "a", "a"]));
 
 // KATA 2 7kyu
 const  flatten = arr => arr.flat(Infinity);
@@ -355,7 +354,7 @@ console.log(flatten([[1,2,3],["a","b","c"],[1,2,3]]));
 
 // KATA 3 7kyu
 const getMissingElement = arr => {
-  arr = arr.sort()
+  arr = arr.sort();
   for (let i = 0; i < 10; i++) {
     if (arr[i] != i) return i;
   }
@@ -366,15 +365,15 @@ console.log(getMissingElement([0, 5, 1, 3, 2, 9, 7, 6, 4]));
 // December 11, 2023 Daily Katas - Arrays
 // KATA 1 7kyu
 const sortme = names => names.sort();
-console.log(sortme(['one', 'two', 'three' ]))
+console.log(sortme(['one', 'two', 'three']));
 
 // KATA 2 6kyu
 const sortMe = names => {
   return names.sort((a,b) => {
-    let strA = a.toLowerCase()
-    let strB = b.toLowerCase()
+    let strA = a.toLowerCase();
+    let strB = b.toLowerCase();
     if (strA < strB) {
-      return -1
+      return -1;
     } else if (strA > strB) {
       return 1;
     } else {
@@ -382,8 +381,8 @@ const sortMe = names => {
     }   
   })  
 }
-console.log(sortMe(["C", "d", "a", "B"]))
-console.log(sortMe(["Hello", "there", "I'm", "fine"] ))
+console.log(sortMe(["C", "d", "a", "B"]));
+console.log(sortMe(["Hello", "there", "I'm", "fine"]));
 
 // KATA 3 7kyu
 const evenLast = numbers => {
@@ -396,7 +395,7 @@ const evenLast = numbers => {
   }
   return sum;
 }
-console.log(evenLast([2, 3, 4, 5]))
+console.log(evenLast([2, 3, 4, 5]));
 
 // December 12, 2023 Daily Katas
 // KATA 1 7kyu
