@@ -363,12 +363,41 @@ const getMissingElement = arr => {
 console.log(getMissingElement([0, 5, 1, 3, 2, 9, 7, 6, 4]));
 
 
-// December 11, 2023 Daily Katas
+// December 11, 2023 Daily Katas - Arrays
 // KATA 1 7kyu
+const sortme = names => names.sort();
+console.log(sortme(['one', 'two', 'three' ]))
 
-// KATA 2 7kyu
+// KATA 2 6kyu
+const sortMe = names => {
+  return names.sort((a,b) => {
+    let strA = a.toLowerCase()
+    let strB = b.toLowerCase()
+    if (strA < strB) {
+      return -1
+    } else if (strA > strB) {
+      return 1;
+    } else {
+      return 0;
+    }   
+  })  
+}
+console.log(sortMe(["C", "d", "a", "B"]))
+console.log(sortMe(["Hello", "there", "I'm", "fine"] ))
 
 // KATA 3 7kyu
+const evenLast = numbers => {
+  let sum = 0;
+  if(numbers.length) {
+    for (let i = 0; i < numbers.length; i += 2) {
+      sum += numbers[i];
+    }
+    sum *= numbers[numbers.length-1];
+  }
+  return sum;
+}
+console.log(evenLast([2, 3, 4, 5]))
+
 // December 12, 2023 Daily Katas
 // KATA 1 7kyu
 
