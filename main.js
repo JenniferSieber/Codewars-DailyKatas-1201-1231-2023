@@ -399,10 +399,30 @@ console.log(evenLast([2, 3, 4, 5]));
 
 // December 12, 2023 Daily Katas
 // KATA 1 7kyu
+const isNice = arr => Boolean(arr.length) && arr.every(el => arr.includes(el - 1) || arr.includes(el + 1));
+console.log(isNice([2,10,9,3])) // t
+console.log(isNice([4,2,3])) //t
+console.log(isNice([3,4,5,7]))//f
 
 // KATA 2 7kyu
-
-// KATA 3 7kyu
+// https://www.codewars.com/kata/55de6173a8fbe814ee000061/solutions
+function unusedDigits(...args) {
+  // Given: varying # of integer arguments
+  // define the parameter
+  // create a variable   
+  
+  const numbers = [0,1,2,3,4,5,6,7,8,9];
+  
+  // change the arguments from integer into a string   
+  //join 
+  let numStr = args.join('');  
+  
+  // filter out those that are not present in any of the arguments
+  // Return: a sorted string of digits
+  return numbers.filter(element => !numStr.includes(element)).join('')
+}
+console.log(unusedDigits([12, 34, 56, 78]))
+console.log(unusedDigits([2015, 8, 26]))
 // December 13, 2023 Daily Katas
 // KATA 1 7kyu
 
