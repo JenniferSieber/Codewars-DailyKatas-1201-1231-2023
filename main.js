@@ -413,12 +413,54 @@ function unusedDigits(...args) {
 }
 console.log(unusedDigits([12, 34, 56, 78]));
 console.log(unusedDigits([2015, 8, 26]));
-// December 13, 2023 Daily Katas
-// KATA 1 7kyu
 
-// KATA 2 7kyu
+// // December 13, 2023 Daily Katas
+// // KATA 1 7kyu
+const getFirstPython = list => {
+  const pythonDev = list.find(dev => dev.language == 'Python');
+  if (!pythonDev) {
+    return 'There will be no Python developers';
+  } 
+ return `${pythonDev.firstName}, ${pythonDev.country}`;
+}
+console.log(getFirstPython([
+  { firstName: 'Mark', lastName: 'G.', country: 'Scotland', continent: 'Europe', age: 22, language: 'JavaScript' },
+  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 30, language: 'Python' },
+  { firstName: 'Emma', lastName: 'B.', country: 'Norway', continent: 'Europe', age: 19, language: 'Clojure' }
+]));
+console.log(getFirstPython( [
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 29, language: 'JavaScript' },
+  { firstName: 'Amar', lastName: 'V.', country: 'Bosnia and Herzegovina', continent: 'Europe', age: 32, language: 'Ruby' },
+]));
+
+// // KATA 2 7kyu
+const countDevelopers = list => list.filter(dev => dev.continent == 'Europe' && dev.language == 'JavaScript').length;
+console.log(countDevelopers([
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+  { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+  { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+  { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+]))
+console.log(countDevelopers([
+  { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+  { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+  { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+]))
 
 // KATA 3 7kyu
+const greetDevelopers = list => {
+  return list.map(dev => {
+    dev.greeting = `Hi ${dev.firstName}, what do you like the most about ${dev.language}?`;
+    return dev;
+  })
+}
+console.log(greetDevelopers([
+  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
+  { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+]))
+
+
 // December 14, 2023 Daily Katas
 // KATA 1 7kyu
 
