@@ -440,33 +440,61 @@ console.log(countDevelopers([
   { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
   { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
   { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
-]))
+]));
 console.log(countDevelopers([
   { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
   { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
   { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
-]))
+]));
 
 // KATA 3 7kyu
 const greetDevelopers = list => {
   return list.map(dev => {
     dev.greeting = `Hi ${dev.firstName}, what do you like the most about ${dev.language}?`;
     return dev;
-  })
+  });
 }
 console.log(greetDevelopers([
   { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
   { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
   { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
-]))
+]));
 
 
 // December 14, 2023 Daily Katas
 // KATA 1 7kyu
+const isRubyComing = list => {
+  let rubyDev = list.find(dev => dev.language === 'Ruby')
+  return rubyDev ? true : false;
+}
+console.log(isRubyComing([
+  { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, language: 'Ruby' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
+  { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
+]));
 
 // KATA 2 7kyu
+const countLanguages = list => {
+  let count = {};
+  list.forEach(dev => count[dev.language] = (count[dev.language] || 0) + 1);
+  return count;
+}
+console.log(countLanguages([
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+]));
 
 // KATA 3 7kyu
+const isSameLanguage = list => list.every(dev => dev.language == list[0].language);
+console.log(isSameLanguage([
+  { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'JavaScript' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'JavaScript' },
+  { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 65, language: 'JavaScript' },
+]));
+
+
 // December 15, 2023 Daily Katas
 // KATA 1 7kyu
 
