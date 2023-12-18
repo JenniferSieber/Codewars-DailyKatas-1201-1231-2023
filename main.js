@@ -558,7 +558,6 @@ const addUsername = list => {
     return dev;
   });
 }
-
 console.log(addUsername([
   { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
   { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
@@ -595,8 +594,8 @@ console.log(findAdmin([
   { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript', githubAdmin: 'no' }
  ]))
 
-// // December 17, 2023 Daily Katas
-// // KATA 1 6kyu
+// December 17, 2023 Daily Katas
+// KATA 1 6kyu
 function isLanguageDiverse(list) {
   list = list.map(dev => dev.language);
   const num = [...new Set(list)].map(el => list.filter(e => e === el).length);
@@ -636,6 +635,7 @@ console.log(findOddNames(list1 = [
 ]))
 
 // December 18, 2023 Daily Katas
+// KATA 1 7kyu
 const askForMissingDetails = list => {
   return list.filter(dev => {
    return Object.keys(dev).some(key => {
