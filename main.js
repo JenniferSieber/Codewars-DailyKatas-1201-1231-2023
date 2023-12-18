@@ -552,22 +552,107 @@ console.log(isAgeDiverse([
 
 // December 16, 2023 Daily Katas
 // KATA 1 7kyu
+const addUsername = list => {
+  return list.map(dev => { 
+    dev.username = dev.firstName.toLowerCase() + dev.lastName[0].toLowerCase() + (new Date().getFullYear() - dev.age);
+    return dev;
+  });
+}
+
+console.log(addUsername([
+  { firstName: 'Emily', lastName: 'N.', country: 'Ireland', continent: 'Europe', age: 30, language: 'Ruby' },
+  { firstName: 'Nor', lastName: 'E.', country: 'Malaysia', continent: 'Asia', age: 20, language: 'Clojure' }
+]))
 
 // KATA 2 7kyu
+const getAverageAge = list => {
+  let ages = list.map(dev => dev.age)
+  return Math.round((ages.reduce((ttl, cv) => ttl + cv, 0)) / ages.length)
+}
+console.log(getAverageAge([
+  { firstName: 'Maria', lastName: 'Y.', country: 'Cyprus', continent: 'Europe', age: 30, language: 'Java' },
+  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 70, language: 'Python' },
+]))
 
 // KATA 3 7kyu
-// December 17, 2023 Daily Katas
-// KATA 1 7kyu
+const findAdmin = (list, lang) => {
+  let admins = []
+  list.forEach(dev => {
+    if (dev.githubAdmin == 'yes' && dev.language == lang) {
+      admins.push(dev)
+    }
+  })
+  return admins
+}
+console.log(findAdmin([
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 49, language: 'Ruby', githubAdmin: 'no' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript', githubAdmin: 'no' }
+]))
+console.log(findAdmin([
+  { firstName: 'Harry', lastName: 'K.', country: 'Brazil', continent: 'Americas', age: 22, language: 'JavaScript', githubAdmin: 'yes' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 49, language: 'Ruby', githubAdmin: 'no' },
+  { firstName: 'Jing', lastName: 'X.', country: 'China', continent: 'Asia', age: 34, language: 'JavaScript', githubAdmin: 'yes' },
+  { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'JavaScript', githubAdmin: 'no' }
+ ]))
+
+// // December 17, 2023 Daily Katas
+// // KATA 1 6kyu
+function isLanguageDiverse(list) {
+  list = list.map(dev => dev.language);
+  const num = [...new Set(list)].map(el => list.filter(e => e === el).length);
+  return Math.max(...num) / Math.min(...num) <= 2;
+}
+console.log(isLanguageDiverse([
+  { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'Python' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'Ruby' },
+  { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 43, language: 'Ruby' },
+  { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 95, language: 'JavaScript' },
+  { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 18, language: 'JavaScript' },
+  { firstName: 'Joao', lastName: 'D.', country: 'Portugal', continent: 'Europe', age: 25, language: 'JavaScript' }
+]))
 
 // KATA 2 7kyu
+const orderFood = list => {
+  let dietObj = {}
+  list.forEach(dev => dietObj[dev.meal] = (dietObj[dev.meal] || 0) + 1);
+  return dietObj
+}
+console.log(orderFood([
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C', 
+    meal: 'vegetarian' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript', 
+    meal: 'standard' },
+  { firstName: 'Ramona', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby', 
+    meal: 'vegan' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C', 
+    meal: 'vegetarian' },
+]))
 
-// KATA 3 7kyu
+// KATA 3 6kyu
+const findOddNames = list => list.filter(dev => dev.firstName.split('').reduce(((ttl, s) => ttl + s.charCodeAt(0)),0) % 2 !== 0)
+console.log(findOddNames(list1 = [
+  { firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' },
+  { firstName: 'Abb', lastName: 'O.', country: 'Israel', continent: 'Asia', age: 39, language: 'Java' }
+]))
+
 // December 18, 2023 Daily Katas
-// KATA 1 7kyu
+const askForMissingDetails = list => {
+  return list.filter(dev => {
+   return Object.keys(dev).some(key => {
+      return dev[key] === null && (dev.question = `Hi, could you please provide your ${key}.`)
+    })
+  })
+}
+console.log(askForMissingDetails([
+  { firstName: null, lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null },
+  { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
+]))
 
 // KATA 2 7kyu
+const solve = (a,b) => [...(a + b)].filter(val => !a.includes(val) || !b.includes(val)).join(``)
+console.log(solve("xyab","xzca"))
 
-// KATA 3 7kyu
 // December 19, 2023 Daily Katas
 // KATA 1 7kyu
 
