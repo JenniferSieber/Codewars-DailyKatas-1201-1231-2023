@@ -685,11 +685,25 @@ console.log(strCount({
   }));
 
 // December 20, 2023 Daily Katas
-// KATA 1 7kyu
+// KATA 1 8kyu string
+function rainAmount(mm){
+  if (mm < 40) {
+       return `You need to give your plant ${Math.abs(mm - 40)}mm of water`;
+  }
+  else {
+       return "Your plant has had more than enough water for today!";
+  };
+}
+console.log(rainAmount(39));
+console.log(rainAmount(0));
+console.log(rainAmount(100));
 
-// KATA 2 7kyu
+// KATA 2 8kyu
+const spEng = string => string.toLowerCase().indexOf('english') == -1 ? false : true;
+console.log(spEng('Eenglish'));
+console.log(spEng('EglishzzzzzzENGLISHzzzzzzzzz'));
+console.log(spEng('Eenlish1'));
 
-// KATA 3 7kyu
 // December 21, 2023 Daily Katas
 // KATA 1 7kyu
 
