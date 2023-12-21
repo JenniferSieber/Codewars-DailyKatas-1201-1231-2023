@@ -705,11 +705,20 @@ console.log(spEng('EglishzzzzzzENGLISHzzzzzzzzz'));
 console.log(spEng('Eenlish1'));
 
 // December 21, 2023 Daily Katas
-// KATA 1 7kyu
+// KATA 1 8kyu
+const uniTotal = string => string.split('').reduce((ttl, el) => ttl + el.charCodeAt(0), 0);
+console.log(uniTotal(''));
+console.log(uniTotal('a'));
+console.log(uniTotal('Mary Had A Little Lamb'));
 
-// KATA 2 7kyu
+// KATA 2 8kyu
+const orderOperations = () => (2+2) * (2+2) * 2;
 
 // KATA 3 7kyu
+// December 22, 2023 Daily Katas
+// KATA 1 7kyu
+const isToday = date => new Date().toDateString() === date.toDateString();
+
 // December 22, 2023 Daily Katas
 // KATA 1 7kyu
 
