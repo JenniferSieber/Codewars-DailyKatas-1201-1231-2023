@@ -721,10 +721,37 @@ const isToday = date => new Date().toDateString() === date.toDateString();
 
 // December 22, 2023 Daily Katas
 // KATA 1 7kyu
+const   sumOfABeach = beach => (beach.match(/sand|fish|water|sun/gi) || []).length
+console.log(sumOfABeach('WAtErSlIde'));
+console.log(sumOfABeach('GolDeNSanDyWateRyBeaChSuNN'));
+console.log(sumOfABeach('gOfIshsunesunFiSh'));
+console.log(sumOfABeach('cItYTowNcARShoW'));
 
 // KATA 2 7kyu
+const cannonsReady = (gunners) => {
+  let count = 0
+  Object.values(gunners).forEach(value => {
+    if (value == 'nay') { count++ }
+  })
+  return (count >=1) ?'Shiver me timbers!' : 'Fire!';
+  }
+console.log(cannonsReady({'Mike':'aye','Joe':'aye','Johnson':'aye','Peter':'aye'}))
+console.log(cannonsReady({'Mike':'aye','Joe':'nay','Johnson':'aye','Peter':'aye'}))
 
 // KATA 3 7kyu
+const sentencify = words => {
+  let arr = words.map((word,i) => {
+    if (i === 0) {
+      return word = word.charAt(0).toUpperCase() + word.slice(1)
+    } else {
+      return word
+    }
+  })
+  return arr.join(' ') + '.'
+}
+ 
+console.log(sentencify(["i", "am", "an", "AI"]))
+
 // December 23, 2023 Daily Katas
 // KATA 1 7kyu
 
