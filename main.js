@@ -754,10 +754,17 @@ console.log(sentencify(["i", "am", "an", "AI"]))
 
 // December 23, 2023 Daily Katas
 // KATA 1 7kyu
+const anyArrows = arrows => arrows.some(arrow => !arrow.damaged)
+console.log(anyArrows([{range: 5}, {range: 10, damaged: true}, {damaged: true}]))
 
 // KATA 2 7kyu
+const sortGiftCode = code => code.split('').sort().join('');
+console.log(sortGiftCode('zyxwvutsrqponmlkjihgfedcba'))
 
 // KATA 3 7kyu
+const containAllRots = (s, arr) => s.split('').every((_,i)=> arr.includes(s.slice(i)+s.slice(0,i)));
+console.log(containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]))
+
 // December 24, 2023 Daily Katas
 // KATA 1 7kyu
 
